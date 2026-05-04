@@ -1,0 +1,55 @@
+{
+    "name": "sushi-market/laravel-info",
+    "description": "TODO",
+    "keywords": [
+        "TODO"
+    ],
+    "homepage": "https://github.com/sushi-market/laravel-info",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "m0nclous",
+            "email": "m0nclous@vk.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "illuminate/support": "^11.0|^12.0|^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DF\\LaravelInfo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Workbench\\App\\": "workbench/app/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DF\\LaravelInfo\\InfoServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "^11.1"
+    },
+    "scripts": {
+        "post-autoload-dump": "@prepare",
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ]
+    }
+}
