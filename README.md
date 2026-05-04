@@ -25,15 +25,15 @@ The package auto-discovers itself via Laravel's package discovery. No manual pro
 
 ## Auth
 
-In any environment other than `local`, the page requires Basic Auth. Set the password in your `.env`:
+In any environment other than `local`, access is controlled via `LARAVEL_INFO_PASSWORD`:
 
-```env
-LARAVEL_INFO_PASSWORD=your-secret-password
-```
+| Value | Behaviour |
+|---|---|
+| not set | denied |
+| `LARAVEL_INFO_PASSWORD=false` | open, no password required |
+| `LARAVEL_INFO_PASSWORD=secret` | Basic Auth with that password |
 
 The username is ignored — only the password is checked.
-
-If `LARAVEL_INFO_PASSWORD` is not set, access is denied.
 
 ## Adding custom sections
 
