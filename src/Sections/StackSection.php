@@ -16,6 +16,7 @@ class StackSection implements Section
         return [
             'Laravel' => app()->version(),
             'PHP'     => PHP_VERSION,
+            'App'     => config('app.version'),
             'SAPI'    => php_sapi_name(),
             'Octane'  => isset($_SERVER['LARAVEL_OCTANE']) ? 'true' : 'false',
             'Vite'    => $this->getViteVersion(),
