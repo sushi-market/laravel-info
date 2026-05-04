@@ -26,6 +26,7 @@ class InfoServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        $this->mergeConfigFrom(__DIR__.'/../config/laravel-info.php', 'laravel-info');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-info');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
     }

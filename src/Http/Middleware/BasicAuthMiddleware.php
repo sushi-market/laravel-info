@@ -14,7 +14,7 @@ class BasicAuthMiddleware
             return $next($request);
         }
 
-        $password = env('LARAVEL_INFO_PASSWORD');
+        $password = config('laravel-info.password');
 
         if (!$password || $request->getPassword() !== $password) {
             return response('Unauthorized', 401, [
