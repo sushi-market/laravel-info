@@ -16,6 +16,10 @@ class BasicAuthMiddleware
 
         $password = config('laravel-info.password');
 
+        if ($password === false) {
+            return $next($request);
+        }
+
         if ($password === null || $request->getPassword() !== $password) {
             return response('Unauthorized', 401, [
                 'WWW-Authenticate' => 'Basic realm="Laravel Info"',
