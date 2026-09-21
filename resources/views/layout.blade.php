@@ -80,6 +80,16 @@
             padding: 2px 7px;
         }
 
+        .h-proto {
+            font-size: .65rem;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+            color: var(--text-muted);
+            border: 1px solid var(--border-hi);
+            border-radius: 3px;
+            padding: 2px 7px;
+        }
+
         .h-label {
             font-size: .65rem;
             text-transform: uppercase;
@@ -206,6 +216,7 @@
         </svg>
         <span class="h-appname">{{ config('app.name') }}</span>
         <span class="h-env">{{ app()->environment() }}</span>
+        <span class="h-proto">{{ request()->isSecure() ? 'HTTPS' : 'HTTP' }}</span>
     </div>
     <span class="h-label">System Info</span>
 </header>
