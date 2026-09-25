@@ -14,7 +14,7 @@ class InfoServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->app->singleton(LaravelInfo::class, fn() => new LaravelInfo()
+        $this->app->singleton(LaravelInfo::class, fn() => (new LaravelInfo())
             ->addSection(new StackSection())
             ->addSection(new EnvironmentSection())
             ->addSection(new ConfigSection())
